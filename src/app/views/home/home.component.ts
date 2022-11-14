@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  constructor() { }
+  constructor() {
+    setTimeout(() =>{
+      this.objStyle['color']="blue";
+    }, 3000);
+   }
 
   public user: string = "Rodrigo Araujo Santos";
 
@@ -16,7 +20,42 @@ export class HomeComponent {
     alt: "avatar"
   };
 
-  public clicar(): void {
-    alert("Clicou!");
+  public reacao(): void {
+    alert("Aprendendo Event Binding");
+  }
+
+  public objStyle: any = {
+    'font-size': '70px',
+    'color': ' red'
+  }
+
+  public isError: boolean = false;
+  public classCor: any = "green"
+
+  public sapinho: boolean = true;
+  public mudarSapinho(): void {
+    this.sapinho = !this.sapinho;
+  }
+
+  public peixes: string[] = [
+    "tubarão",
+    "polvo",
+    "peixe palhaço",
+    "baiacu",
+    "cavalo-marinho",
+    "lula",
+    "carpa"
+  ];
+
+  public textoPipe: string = "Texto de Exemplo (Pipes)";
+
+  public numberPipe: number = 36.3334;
+
+  public nowPipe = new Date();
+
+  public objPipe = {
+    nome: "Rodrigo",
+    idade: 39,
+    area: "Tecnologia"
   }
 }

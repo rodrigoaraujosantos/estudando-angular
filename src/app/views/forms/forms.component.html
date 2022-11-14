@@ -1,0 +1,17 @@
+<app-header></app-header>
+<mat-card>
+  <mat-card-title>Formulários (Template Driven)</mat-card-title>
+  <mat-card-subtitle>Cadastro de Heroi</mat-card-subtitle>
+  <form>
+    <label>nome</label>
+    <input type="text" name="nome" [(ngModel)]="heroi.nome"><br><br>
+    <label>Idade</label>
+    <input type="number" name="idade" [(ngModel)]="heroi.idade"><br><br>
+    <label>Poder</label>
+    <input type="text" name="poder" [(ngModel)]="heroi.poder"><br><br>
+    <button>Cadastrar</button>
+  </form>
+  <h3>{{ heroi | json }}</h3>
+</mat-card>
+
+

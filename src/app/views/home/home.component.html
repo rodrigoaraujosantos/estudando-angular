@@ -1,16 +1,57 @@
 <app-header></app-header>
-<!--Interpolation-->
-<h1>Bem-vindo(a), {{user}}</h1>
 
-<!--Property Binding-->
-<img [src]="image.src" [alt]="image.alt" style="width: 150px"><br>
+<mat-card>
+  <mat-card-title>Data Binding</mat-card-title>
 
-<!--Event Binding-->
-<button (click)="clicar()">Clique aqui</button><br>
+  <!--Interpolation-->
+  <h1>Bem-vindo(a), {{user}}</h1>
+
+  <!--Property Binding-->
+  <img [src]="image.src" [alt]="image.alt"><br><br>
+
+  <!--Event Binding-->
+  <button (click)="reacao()">Clique aqui</button><br><br>
 
 
-<!--Two way data binding-->
-<input type="text" placeholder="Digite seu nome" [(ngModel)]="user"> 
+  <!--Two way data binding-->
+  <input type="text" placeholder="Digite seu nome" [(ngModel)]="user"> 
 
 
-<app-footer></app-footer>
+  <app-footer></app-footer>
+  
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Diretivas</mat-card-title>
+  <!--diretivas de atributos-->
+  <h2 [ngStyle]="objStyle">Texto de exemplo</h2>
+  <h2 [ngClass]="{'green': !isError, 'red': isError}">Texto de exemplo (ngClass)</h2>
+
+  <!--diretivas estruturais-->
+  <h2>Sapinho</h2>
+  <button (click)="mudarSapinho()">Mudar</button>
+  <img *ngIf="sapinho; else elseContainer" src="assets/sapo-1.jpg" alt="Sapinho 1">
+  <ng-template #elseContainer>
+    <img src="assets/sapo-2.jpg" alt="Sapinho 2">
+  </ng-template>
+
+  <h2>Peixes</h2>
+  <ul>
+    <li *ngFor="let peixe of peixes; let i = index">{{i}} -> {{peixe}}</li>
+  </ul>
+
+</mat-card>
+
+
+<mat-card>
+  <mat-card-title>Pipes</mat-card-title>
+  <h2>{{textoPipe | uppercase }}</h2>
+  <h2>{{textoPipe | lowercase }}</h2>
+  <h2>{{numberPipe | number: '1.1-2' }}</h2>
+  <h2>{{nowPipe | date: 'dd/MM/yyyy HH:mm' }}</h2>
+  <h2>{{objPipe | json }}</h2>
+</mat-card>
+
+
+
+
