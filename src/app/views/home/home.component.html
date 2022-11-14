@@ -1,0 +1,16 @@
+<app-header></app-header>
+<!--Interpolation-->
+<h1>Bem-vindo(a), {{user}}</h1>
+
+<!--Property Binding-->
+<img [src]="image.src" [alt]="image.alt" style="width: 150px"><br>
+
+<!--Event Binding-->
+<button (click)="clicar()">Clique aqui</button><br>
+
+
+<!--Two way data binding-->
+<input type="text" placeholder="Digite seu nome" [(ngModel)]="user"> 
+
+
+<app-footer></app-footer>
